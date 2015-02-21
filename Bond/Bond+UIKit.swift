@@ -725,7 +725,7 @@ extension UIBarItem: Bondable {
 
 // MARK: UITextView
 
-@objc class TextViewDynamicHelper: NSObject, UITextViewDelegate
+@objc class TextViewDynamicHelper: NSObject
 {
     weak var control: UITextView?
     var listener: (String -> Void)?
@@ -733,15 +733,15 @@ extension UIBarItem: Bondable {
     init(control: UITextView) {
         super.init()
         self.control = control
-        self.control?.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textViewDidEndEditing:", name: UITextViewTextDidEndEditingNotification, object: self.control)
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(notification: NSNotification) {
         self.listener?(control?.text ?? "")
     }
 
     deinit {
-        control?.delegate = nil
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
 
