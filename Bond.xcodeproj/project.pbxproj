@@ -15,6 +15,7 @@
 		69491BD01A7C21B600A13B6B /* Bond+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69491BCC1A7C21B600A13B6B /* Bond+Foundation.swift */; };
 		69491BD11A7C21B600A13B6B /* Bond+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69491BCD1A7C21B600A13B6B /* Bond+UIKit.swift */; };
 		69491BD31A7C242900A13B6B /* DynamicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69491BD21A7C242900A13B6B /* DynamicTests.swift */; };
+		A17828FF1A9815D000340849 /* Bond+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17828FE1A9815D000340849 /* Bond+CoreData.swift */; };
 		DCA979741A83C3A200DD4A30 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA979691A83C3A100DD4A30 /* Bond.framework */; };
 		DCA979821A83C4F500DD4A30 /* DynamicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69491BD21A7C242900A13B6B /* DynamicTests.swift */; };
 		DCA979831A83C4F800DD4A30 /* BondTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69491BC01A7C217100A13B6B /* BondTests.swift */; };
@@ -53,6 +54,7 @@
 		69491BCC1A7C21B600A13B6B /* Bond+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bond+Foundation.swift"; sourceTree = "<group>"; };
 		69491BCD1A7C21B600A13B6B /* Bond+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bond+UIKit.swift"; sourceTree = "<group>"; };
 		69491BD21A7C242900A13B6B /* DynamicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTests.swift; sourceTree = "<group>"; };
+		A17828FE1A9815D000340849 /* Bond+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bond+CoreData.swift"; sourceTree = "<group>"; };
 		DCA979691A83C3A100DD4A30 /* Bond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA979731A83C3A200DD4A30 /* BondOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BondOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC74CFD11A8BF1A300ED4026 /* UIKitBondTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitBondTests.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				69491BCA1A7C21B600A13B6B /* Bond.swift */,
 				69491BCB1A7C21B600A13B6B /* Bond+Arrays.swift */,
 				69491BCC1A7C21B600A13B6B /* Bond+Foundation.swift */,
+				A17828FE1A9815D000340849 /* Bond+CoreData.swift */,
 				69491BCD1A7C21B600A13B6B /* Bond+UIKit.swift */,
 				69491BB31A7C217100A13B6B /* Bond.h */,
 				69491BB11A7C217100A13B6B /* Supporting Files */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69491BCF1A7C21B600A13B6B /* Bond+Arrays.swift in Sources */,
+				A17828FF1A9815D000340849 /* Bond+CoreData.swift in Sources */,
 				69491BCE1A7C21B600A13B6B /* Bond.swift in Sources */,
 				69491BD01A7C21B600A13B6B /* Bond+Foundation.swift in Sources */,
 				69491BD11A7C21B600A13B6B /* Bond+UIKit.swift in Sources */,
