@@ -725,10 +725,44 @@ extension UIBarItem: Bondable {
 
 // MARK: UITextView
 
+@objc class TextViewDynamicHelper: NSObject, UITextViewDelegate
+{
+    weak var control: UITextView?
+    var listener: (String -> Void)?
+    
+    init(control: UITextView) {
+        super.init()
+        self.control = control
+        self.control?.delegate = self
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        self.listener?(control?.text ?? "")
+    }
+
+    deinit {
+        control?.delegate = nil
+    }
+}
+
+class TextViewDynamic<T>: Dynamic<String>
+{
+    let helper: TextViewDynamicHelper
+    
+    init(control: UITextView) {
+        self.helper = TextViewDynamicHelper(control: control)
+        super.init(control.text)
+        self.helper.listener =  { [unowned self] in self.value = $0 }
+    }
+}
+
 private var textBondHandleUITextView: UInt8 = 0;
 
-extension UITextView: Bondable {
-    
+extension UITextView: Bondable, Dynamical {
+    public func textDynamic() -> Dynamic<String> {
+        return TextViewDynamic<String>(control: self)
+    }
+
     public var textBond: Bond<String> {
         if let b: AnyObject = objc_getAssociatedObject(self, &textBondHandleUITextView) {
             return (b as? Bond<String>)!
@@ -744,5 +778,10 @@ extension UITextView: Bondable {
     public var designatedBond: Bond<String> {
         return self.textBond
     }
+    
+    public func designatedDynamic() -> Dynamic<String> {
+        return textDynamic()
+    }
+
 }
 
