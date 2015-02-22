@@ -733,7 +733,7 @@ extension UIBarItem: Bondable {
     init(control: UITextView) {
         super.init()
         self.control = control
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textViewDidEndEditing:", name: UITextViewTextDidEndEditingNotification, object: self.control)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("textViewDidEndEditing:"), name: UITextViewTextDidEndEditingNotification, object: self.control)
     }
     
     func textViewDidEndEditing(notification: NSNotification) {
